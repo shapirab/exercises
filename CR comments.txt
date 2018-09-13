@@ -1,4 +1,9 @@
 Exercises In Python - CR 1:
+https://github.com/shapirab/exercises.git
+
+Note: Throughout the CR, I do not repeat comments - if a comment appears in one place it is relevant for all the places that the action appears. (For example, I comment about using docstrings instead of regular comments for methods only in one place, but I expect them every time a method appears.)
+
+Note: I gave you a lot of CR comments. A lot. This does not contradict the fact that I think this is excellent work. The comments are oppurtunities to learn and clean the code. I can see that the work is well done, with a lot of thought, and far better programming than the last code I CRed. Well done!!
 
 Git Usage:
 	* Branch usage: the best practice that I am familiar with for git branch handling is to have a minimum of two branches: master, which contains the cleanest, last stable version of your code, and dev, another branch which is for development. Depending on the size of your project, it is very likely that you will have more branches, which are then merged into the dev, and finally into the master. 
@@ -17,3 +22,12 @@ Conventions:
 	* Python conventions are called PEP8, throughout the CR, when I refer to PEP8 I will write so.
 
 	* PyCharm offers a reformat function: ctrl+alt+l fixes many PEP8 issues that are simple to resolve (line lengths, import orders, whitespace). Obviously it will not change any variable names, but it can be very handy.
+
+* Advice: I see that in many of these methods, you need to write a lot of code for reading input from the users, which is not really necessary. Here are two options for bypassing this (without requiring tests, which will be learned later):
+	* Create a method that runs the other method with numbers instead of reading them from the user: check_if_positive(-1) instead of with reading input. You could elaborate on this:
+		print(check_if_positive(1), " should be 1")
+		print(check_if_positive(-5), " should be -1")
+		print(check_if_positive(0), " should be 0")
+	This is already a little bit like creating your own tests.
+
+	* Open IPython from the folder where your files are. Import the file containing your methods, and run them using IPython.
