@@ -1,0 +1,19 @@
+Exercises In Python - CR 1:
+
+Git Usage:
+	* Branch usage: the best practice that I am familiar with for git branch handling is to have a minimum of two branches: master, which contains the cleanest, last stable version of your code, and dev, another branch which is for development. Depending on the size of your project, it is very likely that you will have more branches, which are then merged into the dev, and finally into the master. 
+	Consider the following workflow, for adding a new feature to an existing repository:
+	Master -> dev (synchronized to master) -> feature1 (branch for developing the new feature). Commits to feature1. Local tests for the feature, CRs
+	>- merge to dev. Tests for complete program. Bugfixess in incorporation (consider that other people might have pushed to the dev at the same time) -> merge to master. Feature development complete.
+
+
+Conventions:
+	* easyFIrstExercises - inconsistency with capitalization is bad practice, it can cause confusion for other developers (and yourself). Same with moreFUnctions. It is well worth being careful with these. Also exrecise1 can be problematic later.
+
+	* As far as I know, Python conventions are usually to use underscore separated filenames (more_functions instead of moreFunctions). The style conventions are not important as long as they are uniform across your project, however I think you should be familiar with the common conventions.
+
+	* Python conventions for variable names are also some_variable, instead of someVariable (as used in C#)
+
+	* Python conventions are called PEP8, throughout the CR, when I refer to PEP8 I will write so.
+
+	* PyCharm offers a reformat function: ctrl+alt+l fixes many PEP8 issues that are simple to resolve (line lengths, import orders, whitespace). Obviously it will not change any variable names, but it can be very handy.
