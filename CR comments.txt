@@ -23,11 +23,14 @@ Conventions:
 
 	* PyCharm offers a reformat function: ctrl+alt+l fixes many PEP8 issues that are simple to resolve (line lengths, import orders, whitespace). Obviously it will not change any variable names, but it can be very handy.
 
-* Advice: I see that in many of these methods, you need to write a lot of code for reading input from the users, which is not really necessary. Here are two options for bypassing this (without requiring tests, which will be learned later):
-	* Create a method that runs the other method with numbers instead of reading them from the user: check_if_positive(-1) instead of with reading input. You could elaborate on this:
-		print(check_if_positive(1), " should be 1")
-		print(check_if_positive(-5), " should be -1")
-		print(check_if_positive(0), " should be 0")
-	This is already a little bit like creating your own tests.
+General:
+	* Advice: I see that in many of these methods, you need to write a lot of code for reading input from the users, which is not really necessary. Here are two options for bypassing this (without requiring tests, which will be learned later):
+		* Create a method that runs the other method with numbers instead of reading them from the user: check_if_positive(-1) instead of with reading input. You could elaborate on this:
+			print(check_if_positive(1), " should be 1")
+			print(check_if_positive(-5), " should be -1")
+			print(check_if_positive(0), " should be 0")
+		This is already a little bit like creating your own tests.
 
-	* Open IPython from the folder where your files are. Import the file containing your methods, and run them using IPython.
+		* Open IPython from the folder where your files are. Import the file containing your methods, and run them using IPython.
+
+	* Code needs to be prepared for CR. In most teams, the CR is one step away from merging code to the master, integrating it into the finished product. The CR happens after tests - code committed to CR should functionally work - CRs are mostly about making the code cleaner, and learning new ways of doing things. Code for CR should not have TODOs in it, it should not have commented out code, etc.
