@@ -11,6 +11,8 @@ Git Usage:
 	Master -> dev (synchronized to master) -> feature1 (branch for developing the new feature). Commits to feature1. Local tests for the feature, CRs
 	>- merge to dev. Tests for complete program. Bugfixess in incorporation (consider that other people might have pushed to the dev at the same time) -> merge to master. Feature development complete.
 
+	* Notice that I created a branch called CR. In a larger project, obviously I would have had to create a more specific name (like, branch1-cr). There are different ways of doing this, for example in my team we would not create branches for CRs; we would post comments in the site itself (however that was with bitbucket and not github - I am not sure it is possible with github). After the CR is finished and all issues resolved, the CR branch should be deleted of course.
+
 
 Conventions:
 	* easyFIrstExercises - inconsistency with capitalization is bad practice, it can cause confusion for other developers (and yourself). Same with moreFUnctions. It is well worth being careful with these. Also exrecise1 can be problematic later.
