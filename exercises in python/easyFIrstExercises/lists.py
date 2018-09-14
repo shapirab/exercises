@@ -43,7 +43,7 @@ def unique_list(a_list):
     # CR: I would prefer unique_list than the name a_unique_list, the 'a' adds nothing to the name.
     a_unique_list = set(a_list)
 
-    # CR: a_unique_list contains a set, not a list - you need to convert it back to a list. Also you do not return it.
+    # CR: a_unique_list contains a set, not a list - you need to convert it back to a list. Also you never return it.
     print(a_unique_list)
 
 
@@ -57,7 +57,7 @@ def has_consecutive_2 (new_list):
     is_consecutive = False
     for n in new_list:
         # CR: Notice that n is the item in new_list, not the index. For example, if the list is [4,7,2], n receives the values 4, 7, and 2, which does not help you compare indexes.
-        # CR: If n is the curreent index (like a regular for loop), you would run into a problem at the last index, when the index of n is the last member of the list. Code like this always needs special care for the ends: what happens for the first index? The last index? And of course, you should check the middle case as well.
+        # CR: If n is the current index (like a regular for loop), you would run into a problem at the last index, when the index of n is the last member of the list. Code like this always needs special care for the ends: what happens for the first index? The last index? And of course, you should check the middle case as well.
         if n == 2 and new_list[n + 1] == 2:
             # CR: Notice that once you find the consecutive 2s you do not need to continue running the method - it is enough to return here.
             is_consecutive = True

@@ -1,6 +1,7 @@
 # Create a function that takes a string and a number
 # as a parameter. It should return the
 # character that is in the position given
+
 # CR: Notice that the problem definition is to RETURN the character - you are only printing it. (If the problem is that you wanted to print it, you print in the main function calling it: print(get_char(...)))
 def get_char(word, location):
     char = word[int(location)]
@@ -12,10 +13,11 @@ def get_char(word, location):
 # Create a function that searches a string for a given character
 # and returns the position that the letter first occurs.
 # If the letter doesn't occur, return -1.
+
 # CR: You could have used the string find method. ("some_string".find)
 
 def search_string(word):
-	# CR: I don't like the inconsistency here - word is received as a parameter but you receive char from the user. I think that in a method like this it is best to receive both as parameters, but even if you decide to read from user consistency is important. (Imagine that something like this leaves the reader wondering WHY char is read here but word is read from the main function. Things like this should have a good reason behind them)
+	# CR: I don't like the inconsistency here - word is received as a parameter but you receive char from the user. I think that in a method like this it is best to receive both as parameters, but even if you decide to read from input, user consistency is important. (Imagine that something like this leaves the reader wondering WHY char is read here but word is read from the main function. Things like this should have a good reason behind them)
     char = input("please enter a letter to search: ")
     # CR: I think letter is a better variable name, I don't see the benefits of aLetter. (for letter in word reads better than for aletter in word). Notice that in variable names, every letter matters - you don't want letters that do not have meaning.
     for aLetter in word:

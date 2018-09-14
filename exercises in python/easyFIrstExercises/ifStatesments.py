@@ -3,9 +3,11 @@
 # CR: The documentation should be in the format of: The method takes an int, returns 1 if positive and so on.
 # Python has a special way to document functions: use """ brackets to create a special function comment. Doing this in PyCharm should create a block comment with blocks for the parameters and return value, which is essentially what your comment here is explaining. 
 # Another benefit of using docstrings is that your method will have a __doc__ attribute, which you can view (try this in IPython)
+
 #Create a function that takes an int and returns 1 if positive, -1 if negative, 0 if 0
 def check_if_positive(num):
     # CR: I think it makes more sense to assume that num is a number, and raise exception if it is not. In your case, when you receive input from the user, it is the calling method that needs to convert the input to integers, not this method. It is better that this method assumes it receives a number, and its code should fail in the event that num is not a number. (Think about how confusing it is that check_if_positive('a') will fail, but check_if_positive('1') does not - both are type string)
+
     # CR: As explained above, I think this is not the correct place to convert input to integers, but for efficiency, the conversion int(num) should happen once, not twice: num1 = int(num), and using num1 throughout the code.
     if int(num) > 0:
         return 1

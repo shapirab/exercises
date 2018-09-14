@@ -5,7 +5,7 @@ def circle_area(num):
     # area = (radius ** 2) * math.pi  # Parentheses make this easier to understand
     # I think in this case it is clear enough, however in more complicated cases you might want to add a comment explaining the logic as well.
 
-    # CR: PEP8 requires whitespace between both sides of an operator: a+b - not PEP8, a + b - PEP8
+    # CR: PEP8 requires whitespace between both sides of an operator: a + b - PEP8, a+b - not PEP8
     area = num**2 * math.pi
     print(area)
 

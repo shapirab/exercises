@@ -1,5 +1,4 @@
 Exercises In Python - CR 1:
-https://github.com/shapirab/exercises.git
 
 Note: Throughout the CR, I do not repeat comments - if a comment appears in one place it is relevant for all the places that the action appears. (For example, I comment about using docstrings instead of regular comments for methods only in one place, but I expect them every time a method appears.)
 
@@ -17,7 +16,7 @@ Git Usage:
 
 
 Conventions:
-	* easyFIrstExercises - inconsistency with capitalization is bad practice, it can cause confusion for other developers (and yourself). Same with moreFUnctions. It is well worth being careful with these. Also exrecise1 can be problematic later.
+	* easyFIrstExercises - inconsistency with capitalization is bad practice, it can cause confusion for other developers (and yourself). Same with moreFUnctions. It is well worth being careful with these. Also exrecise1 can be problematic later (imagine that you have to remember exactly how it is misspelled)
 
 	* As far as I know, Python conventions are usually to use underscore separated filenames (more_functions instead of moreFunctions). The style conventions are not important as long as they are uniform across your project, however I think you should be familiar with the common conventions.
 
@@ -48,7 +47,7 @@ General:
 			print(int(number) + int(1))
 
 	which I really do not understand. In the second example, once you define a variable's data type to be of a certain kind, Python treats it as such - if number was defined with an integer value, there is no reason you would need to convert it to an int - type(number) == int.
-	In the first example, your method should define the types of data it receives, and assume its data is of this type. You would define in the documentation that number is a number value. Depending on your need, sometimes you assume that exceptions would be raised for wrong values - which is exactly what you want. In other cases you would assert that number is an integer, raising an explicit error for wrong value. The concern of converting between values is not the inner methods. (Also, you get the problem that this happens implicitly - for every value the function receives it converts it to an integer, which will sometimes raise errors and sometimes won't, even in cases where you do not want values converted to integers. Try running int(True), for example - I assume that if the method is run with a booleann you would want an error, but that is not what happens.). Consider the examples:
+	In the first example, your method should define the types of data it receives, and assume its data is of this type. You would define in the documentation that number is a number value. Depending on your need, sometimes you assume that exceptions would be raised for wrong values - which is exactly what you want. In other cases you would assert that number is an integer, raising an explicit error for wrong value. The concern of converting between values is not the inner methods. (Also, you get the problem that this happens implicitly - for every value the function receives it converts it to an integer, which will sometimes raise errors and sometimes won't, even in cases where you do not want values converted to integers. Try running int(True), for example - I assume that if the method is run with a boolean you would want an error, but that is not what happens). Consider the examples:
 		def increment(num1):
 			incremented = num1 + 1  # This will raise TypeError for a value that addition is not implemented for, notifying that something went wrong.
 
@@ -57,3 +56,12 @@ General:
 
 		def convert_to_int(parameter):
 			converted = int(parameter)  # This will sometimes work (for integer, or characters containing digits), but will fail for characters. It will produce unexpected results for convert_to_int(True), for example.
+
+	* In using docstrings, you have probably noticed the :param X: and :return: statements. These enable you to give detailed information about the parameters the method expects and the return value it returns. For example:
+	def multiply(numbers):
+		"""
+		Returns the product of all numbers in a list of numbers.
+		:param numbers: list of numbers to multiply
+		:return: product of all numbers
+		"""
+	The example is a little basic, but serves the point.

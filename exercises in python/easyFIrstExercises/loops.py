@@ -1,6 +1,8 @@
 # CR: This is a problem definition, and not a comment explaining what the method does.
+
 # create a function that takes an integer and and adds all the integers
 # between 1 and the number. You will need an accumulator as well as a counter.
+
 # CR: This method does not work. You should not submit for CR code that does not work.
 # Notice that your code only iterates over all the numbers between 1 and the number, but never adds them together.
 # CR: Bad method name. According to your comment, the method calculates the sum of numbers below the number, it does nothing with adding one.

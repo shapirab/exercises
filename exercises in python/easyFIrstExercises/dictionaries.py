@@ -33,7 +33,7 @@ def lookup(dictionary, value):
     # CR: It is considered more Pythonic, and faster, to use the [] notation (only in set() it is better to use the method). You can check out the link: https://stackoverflow.com/questions/5790860/and-vs-list-and-dict-which-is-better (I looked this up)
     # CR: I think it is better to avoid having the variable type in its name, unless it is really necessary. I think this would have been beteter as found_keys, or desired_keys, or many other possible names that indicate the purpose of this variable rather than its type.
     list_of_keys = list()
-    # CR: It is almost always better to avoid one letter names. In this case, I would have substituted k and v for key and value, and called the value parameter lookup_value, or something like it. The idea is that one word names are usually a lot less clear than word, even though they are shorter. Only in the classic lst[i] it is acceptable.
+    # CR: It is almost always better to avoid one letter names. In this case, I would have substituted k and v for key and value, and called the value parameter lookup_value, or something like it. The idea is that one letter names are usually a lot less clear than complete words, even though they are shorter. Only in the classic lst[i] it is acceptable.
     for k, v in dictionary.items():
         if v == value:
             list_of_keys.append(k)
