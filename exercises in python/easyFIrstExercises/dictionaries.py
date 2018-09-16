@@ -27,6 +27,7 @@ def lookup(dictionary, value):
     :param value:
     :return:
     """
+
     list_of_keys = list()
     for k, v in dictionary.items():
         if v == value:
@@ -37,12 +38,32 @@ def lookup(dictionary, value):
         return sorted(list_of_keys)
 
 
+def switch_keys_values(dictionary):
+    new_dictionary = {}
+    for k, v in dictionary.items():
+        new_value = k
+        new_key = v
+        new_dictionary[new_key] = new_value
+
+    return new_dictionary
+
+
+def create_dictionary():
+    a = "a"
+    b = "b"
+    c = "blue"
+    d = "yellow"
+    dictionary = dict()
+    dictionary[a] = c
+    dictionary[b] = d
+    return dictionary
+
+
 if __name__ == "__main__":
     # print(sorted_list())
-    dictionary = {'ta': 4, 'hi': 7, 'Hello': 4}
-    str_value = input("please enter a number: ")
-    value = int(str_value)
-    print(lookup(dictionary, value))
+    dictionary = {"a": "Blue", "b": "Yellow"}
+    print(switch_keys_values(dictionary))
+
 
 
 
