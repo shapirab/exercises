@@ -1,3 +1,5 @@
+# CR: Nice job, however the name exercise1 is not indicative,
+# and different from the convention you use throughout your project
 age = 7
 name = 4.7
 pigs = "can fly"
@@ -15,5 +17,4 @@ inches = int(input("please enter number of inches: "))
 foot = 12
 feet = inches / foot
 print(feet)
-
 

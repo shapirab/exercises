@@ -1,0 +1,67 @@
+Exercises In Python - CR 1:
+
+Note: Throughout the CR, I do not repeat comments - if a comment appears in one place it is relevant for all the places that the action appears. (For example, I comment about using docstrings instead of regular comments for methods only in one place, but I expect them every time a method appears.)
+
+Note: I gave you a lot of CR comments. A lot. This does not contradict the fact that I think this is excellent work. The comments are oppurtunities to learn and clean the code. I can see that the work is well done, with a lot of thought, and far better programming than the last code I CRed. Well done!!
+
+Note: During the exercises, it seems you wrote the problem definition as a comment above the method. This was very helpful! However, in addition to doing this you whould write function docstrings, using """. 
+
+Git Usage:
+	* Branch usage: the best practice that I am familiar with for git branch handling is to have a minimum of two branches: master, which contains the cleanest, last stable version of your code, and dev, another branch which is for development. Depending on the size of your project, it is very likely that you will have more branches, which are then merged into the dev, and finally into the master. 
+	Consider the following workflow, for adding a new feature to an existing repository:
+	Master -> dev (synchronized to master) -> feature1 (branch for developing the new feature). Commits to feature1. Local tests for the feature, CRs
+	>- merge to dev. Tests for complete program. Bugfixess in incorporation (consider that other people might have pushed to the dev at the same time) -> merge to master. Feature development complete.
+
+	* Notice that I created a branch called CR. In a larger project, obviously I would have had to create a more specific name (like, branch1-cr). There are different ways of doing this, for example in my team we would not create branches for CRs; we would post comments in the site itself (however that was with bitbucket and not github - I am not sure it is possible with github). After the CR is finished and all issues resolved, the CR branch should be deleted of course.
+
+
+Conventions:
+	* easyFIrstExercises - inconsistency with capitalization is bad practice, it can cause confusion for other developers (and yourself). Same with moreFUnctions. It is well worth being careful with these. Also exrecise1 can be problematic later (imagine that you have to remember exactly how it is misspelled)
+
+	* As far as I know, Python conventions are usually to use underscore separated filenames (more_functions instead of moreFunctions). The style conventions are not important as long as they are uniform across your project, however I think you should be familiar with the common conventions.
+
+	* Python conventions for variable names are also some_variable, instead of someVariable (as used in C#)
+
+	* Python conventions are called PEP8, throughout the CR, when I refer to PEP8 I will write so.
+
+	* PyCharm offers a reformat function: ctrl+alt+l fixes many PEP8 issues that are simple to resolve (line lengths, import orders, whitespace). Obviously it will not change any variable names, but it can be very handy.
+
+General:
+	* Advice: I see that in many of these methods, you need to write a lot of code for reading input from the users, which is not really necessary. Here are two options for bypassing this (without requiring tests, which will be learned later):
+		* Create a method that runs the other method with numbers instead of reading them from the user: check_if_positive(-1) instead of with reading input. You could elaborate on this:
+			print(check_if_positive(1), " should be 1")
+			print(check_if_positive(-5), " should be -1")
+			print(check_if_positive(0), " should be 0")
+		This is already a little bit like creating your own tests.
+
+		* Open IPython from the folder where your files are. Import the file containing your methods, and run them using IPython.
+
+	* Code needs to be prepared for CR. In most teams, the CR is one step away from merging code to the master, integrating it into the finished product. The CR happens after tests - code committed to CR should functionally work - CRs are mostly about making the code cleaner, and learning new ways of doing things. Code for CR should not have TODOs in it, it should not have commented out code, etc.
+
+	* About function parameters: I noticed that throughout the work you convert the parameters the methods receive to integers. The following is very common in your code:
+		def func(number):
+			actual_num = int(number)
+	and even this:
+		def func():
+			number = 1
+			print(int(number) + int(1))
+
+	which I really do not understand. In the second example, once you define a variable's data type to be of a certain kind, Python treats it as such - if number was defined with an integer value, there is no reason you would need to convert it to an int - type(number) == int.
+	In the first example, your method should define the types of data it receives, and assume its data is of this type. You would define in the documentation that number is a number value. Depending on your need, sometimes you assume that exceptions would be raised for wrong values - which is exactly what you want. In other cases you would assert that number is an integer, raising an explicit error for wrong value. The concern of converting between values is not the inner methods. (Also, you get the problem that this happens implicitly - for every value the function receives it converts it to an integer, which will sometimes raise errors and sometimes won't, even in cases where you do not want values converted to integers. Try running int(True), for example - I assume that if the method is run with a boolean you would want an error, but that is not what happens). Consider the examples:
+		def increment(num1):
+			incremented = num1 + 1  # This will raise TypeError for a value that addition is not implemented for, notifying that something went wrong.
+
+		def func(number):
+			assert type(number) == int # This will raise AssertionError in the event where number is not an int, explicitly indicating that number should always be an integer.
+
+		def convert_to_int(parameter):
+			converted = int(parameter)  # This will sometimes work (for integer, or characters containing digits), but will fail for characters. It will produce unexpected results for convert_to_int(True), for example.
+
+	* In using docstrings, you have probably noticed the :param X: and :return: statements. These enable you to give detailed information about the parameters the method expects and the return value it returns. For example:
+	def multiply(numbers):
+		"""
+		Returns the product of all numbers in a list of numbers.
+		:param numbers: list of numbers to multiply
+		:return: product of all numbers
+		"""
+	The example is a little basic, but serves the point.
